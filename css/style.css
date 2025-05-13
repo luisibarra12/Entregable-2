@@ -1,51 +1,55 @@
+@charset "UTF-8";
 /* Reset de estilos (para tener un control más preciso sobre el diseño) */
 * {
-    margin: 0; 
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; 
-    text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  text-align: center;
 }
 
 /* ENCABEZADO */
 header {
-    opacity: 100%;
-    text-align: center;
-    background-color: #3b1061;
-    padding: 75px;
-    font-size: 50px;
-    font-weight: bold;
-    font-family: "Josefin Sans", sans-serif;
-    
+  opacity: 100%;
+  text-align: center;
+  background-color: #3b1061;
+  color: #000000;
+  padding: 75px;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Josefin Sans", sans-serif;
+  transition: background-color 0.5s ease;
+}
+header:hover {
+  background-color: #2a0f48;
 }
 
 /* MENÚ DE NAVEGACIÓN */
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 25px 0;
-    font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 25px 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 nav ul li {
-    margin: 0 15px;
+  margin: 0 15px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #3b1061;
-    font-weight: bold;
+  text-decoration: none;
+  color: #3b1061;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
-
-nav ul li a:hover{
-    text-decoration: underline;
-    color:#000000
-    
+nav ul li a:hover {
+  color: #000000;
+  text-decoration: underline;
 }
 
 /* TARJETAS */
@@ -54,141 +58,138 @@ nav ul li a:hover{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     max-width: 1000px;
-    align-items: center;
-    margin-left: 450px;
-  }
-    
-  .card {
-    text-align: center;
-    width: 100%; /* Esto hará que la card ocupe todo el espacio de su celda */
-    max-width: none; /* Elimina el límite que está causando el espacio extra */
-    padding: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    border-radius: 12px;
+    margin: 0 auto;
   }
 
+.card {
+  text-align: center;
+  width: 100%;
+  max-width: none;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.05);
+  background-color: #b784e4;
+}
 .card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-}
-
-.card:hover {
-    transform: scale(1.05); 
-    transition: 0.3s;
-    background-color: #b784e4;
-}
-
+    object-fit: cover;
+  }
 .card p {
-    font-family: "Josefin Sans", sans-serif;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
 }
-
 
 /* TABLA DE TALLES */
-
 .contenedor-tabla {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px; 
-    font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 .tabla-talles {
-    border-collapse: collapse black; 
-    width: 500px;
-    background-color: #ffffff;  
-    text-align: center;    
+  border-collapse: collapse;
+  width: 500px;
+  background-color: #ffffff;
+  text-align: center;
 }
-
-.tabla-talles th, .tabla-talles td {
-    padding: 10px; 
-    border: solid #000000; 
-    
+.tabla-talles th,
+.tabla-talles td {
+  padding: 10px;
+  border: solid #000000;
+}
+.tabla-talles tr:hover {
+  background-color: #3b1061;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 footer {
-    padding: 25px;
-    margin-left: 90rem;
+  padding: 25px;
+  margin-left: 90rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+footer:hover {
+  transform: scale(1.05);
+  background-color: #f0f0f0;
+  cursor: pointer;
 }
 
 .guap-mkt {
-    color:#3b1061
+  color: #3b1061;
 }
 
-footer:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-    cursor: pointer;
+@media (max-width: 600px) {
+  /* media queries celular */
+  header {
+    font-size: 30px;
+    padding: 40px;
+  }
+  .galeria {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contenedor-tabla {
+    flex-direction: column;
+  }
+  .tabla-talles {
+    width: 90%;
+  }
+  footer {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+  /* media queries tablet */
+  header {
+    font-size: 40px;
+    padding: 60px;
+  }
+  nav ul {
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  .galeria {
+    justify-content: center;
+    gap: 40px;
+  }
+  .card {
+    width: 40%;
+  }
+  .tabla-talles {
+    width: 80%;
+  }
+  footer {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+/* Animación al cargar la página */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body {
+  animation: fadeIn 1s ease-in;
 }
 
-tr:hover {
-    background-color: #3b1061;
-    cursor: pointer;
-}
-
- @media (max-width: 600px)  {  /*media queries celular*/
-    header {
-        font-size: 30px;
-        padding: 40px;
-    }
-
-
-    .galeria {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .card {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .contenedor-tabla {
-        flex-direction: column;
-    }
-
-    .tabla-talles {
-        width: 90%;
-    }
-
-    footer {
-        margin-left: 0;
-        text-align: center;
-    }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) { /*media queries tablet*/
-    header {
-        font-size: 40px;
-        padding: 60px;
-    }
-
-    nav ul {
-        padding-bottom: 50px;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    .galeria {
-        justify-content: center;
-        gap: 40px;
-    }
-
-    .card {
-        width: 40%;
-    }
-
-    .tabla-talles {
-        width: 80%;
-    }
-
-    footer {
-        margin-left: 0;
-        text-align: center;
-    }
-}
+/*# sourceMappingURL=style.css.map */
