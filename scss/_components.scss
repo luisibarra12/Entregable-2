@@ -1,0 +1,52 @@
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}
+
+.contact-info, .form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  @include box-shadow(0.1);
+}
+
+.contact-info:hover, .form-container:hover {
+  transform: translateY(-10px);
+}
+
+.contact-info h2, .form-container h2 {
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.form-container input, .form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container input[type="submit"] {
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $highlight-color;
+  }
+}
+
+footer {
+  background-color: $primary-color; // Asegurate de tener este color en _variables.scss
+  color: white;
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 14px;
+}

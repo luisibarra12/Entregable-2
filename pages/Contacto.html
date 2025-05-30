@@ -23,11 +23,14 @@
     </nav>
 
     <section class="contact-container">
-        <div class="contact-info">
-            <h2>Información de Contacto</h2>
-            <p><strong>Teléfono:</strong> </p>
-            <p><strong>Correo Electrónico:</strong> </p>
-            <p><strong>Dirección:</strong> </p>
+        <div class="form-container">
+            <h2>Datos</h2>
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Teléfono" required>
+                <input type="email" name="email" placeholder="Correo Electronico" required>
+                <textarea name="message" rows="5" placeholder="Direccion" required></textarea>
+                <input type="submit" value="Guardar">
+            </form>
         </div>
 
         <div class="form-container">
@@ -40,6 +43,10 @@
             </form>
         </div>
     </section>
+
+      <a href="https://www.instagram.com/triple_eightt/" target="_blank">
+         <button>Instagram</button>
+     </a>
 
     <footer>
         <p class="designed-by">Designed by </p>

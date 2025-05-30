@@ -13,10 +13,11 @@ body {
 }
 
 header {
-  background-color: #3b1061;
-  color: rgb(0, 0, 0);
+  opacity: 100%;
   text-align: center;
-  padding: 20px;
+  background-color: #3b1061;
+  color: #000000;
+  padding: 75px;
   font-size: 50px;
   font-weight: bold;
   font-family: "Josefin Sans", sans-serif;
@@ -29,10 +30,9 @@ header:hover {
 nav ul {
   display: flex;
   justify-content: center;
-  list-style-type: none;
-  padding: 10px 0;
-  background-color: #222;
-  margin: 0;
+  list-style: none;
+  margin: 25px 0;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 nav ul li {
@@ -40,15 +40,14 @@ nav ul li {
 }
 
 nav ul li a {
-  color: white;
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  color: #3b1061;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
-
 nav ul li a:hover {
-  background-color: #555;
+  color: #000000;
+  text-decoration: underline;
 }
 
 .contact-container {
@@ -96,6 +95,8 @@ nav ul li a:hover {
   background-color: #b784e4;
 }
 
+
+
 footer {
   text-align: center;
   background-color: #3b1061;
@@ -130,4 +131,3 @@ footer {
   }
 }
 
-/*# sourceMappingURL=contacto.css.map */
